@@ -18,9 +18,7 @@ public class Plant {
       return age >= mature_age;
    }
 
-   public void day_pass(){
-      age += growth_rate;
-   }
+   public void age(){ age += growth_rate; }
 
    public String getName(){
       return name;
@@ -31,6 +29,7 @@ public class Plant {
       if(harvest_days < 0){
          harvest_days = 0;
       }
+      if(growth_rate == 0){ return "Nothing growing."; }
       String harvest_status = "Ready to harvest in "+harvest_days+" days.";
       if(harvest_days==0){
          harvest_status = "Now Ready to harvest";
